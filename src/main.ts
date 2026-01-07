@@ -22,7 +22,7 @@ addIcons({ mailOutline, lockClosedOutline, personOutline, callOutline, locationO
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    provideIonicAngular(),
+    provideIonicAngular({ mode: 'md' }),
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideHttpClient()  // ✅ Esto reemplaza HttpClientModule
   ],
