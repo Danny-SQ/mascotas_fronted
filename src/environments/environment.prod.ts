@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://backend-mascotas-dui0.onrender.com/api'
+  SERVER_URL: 'http://localhost:5000',
+  CLIENT_URL: 'http://localhost:4200'
 };
