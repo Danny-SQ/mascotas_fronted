@@ -39,7 +39,7 @@ export class DeleteVaccinePage {
         {
           text: 'Eliminar',
           handler: () => {
-            this.http.delete(`http://localhost:5000/vacunas/${this.vacunaId}`)
+            this.http.delete(`https://backend-mascotas-dui0.onrender.com/vacunas/${this.vacunaId}`)
               .subscribe({
                 next: () => this.navCtrl.navigateBack('/home-vaccine'),
                 error: async () => {

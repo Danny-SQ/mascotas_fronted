@@ -40,7 +40,7 @@ export class DeleteDewormingPage {
         {
           text: 'Eliminar',
           handler: () => {
-            this.http.delete(`http://localhost:5000/api/desparasitaciones/${this.desparasitacionId}`)
+            this.http.delete(`https://backend-mascotas-dui0.onrender.com/api/desparasitaciones/${this.desparasitacionId}`)
               .subscribe({
                 next: () => this.navCtrl.navigateBack('/home-deworming'),
                 error: async () => {

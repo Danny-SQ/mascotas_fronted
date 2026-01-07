@@ -39,7 +39,7 @@ export class DeleteRecommendationPage {
         {
           text: 'Eliminar',
           handler: () => {
-            this.http.delete(`http://localhost:5000/api/recomendaciones/${this.recommendationId}`)
+            this.http.delete(`https://backend-mascotas-dui0.onrender.com/api/recomendaciones/${this.recommendationId}`)
               .subscribe({
                 next: () => this.navCtrl.navigateBack('/home-recommendation'),
                 error: async () => {

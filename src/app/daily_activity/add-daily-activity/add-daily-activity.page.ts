@@ -43,7 +43,7 @@ export class AddDailyActivityPage {
 
   cargarMascotas() {
     this.http
-      .get<any[]>(`http://localhost:5000/api/mascotas/cuidador/${this.cuidadorId}`)
+      .get<any[]>(`https://backend-mascotas-dui0.onrender.com/api/mascotas/cuidador/${this.cuidadorId}`)
       .subscribe(
         (data) => {
           this.mascotas = data;
@@ -80,7 +80,7 @@ export class AddDailyActivityPage {
       mascota_id: this.mascota_id,
     };
 
-    this.http.post('http://localhost:5000/api/actividades', data).subscribe(
+    this.http.post('https://backend-mascotas-dui0.onrender.com/api/actividades', data).subscribe(
       () => {
         this.navCtrl.navigateBack('/home-daily-activity');
       },

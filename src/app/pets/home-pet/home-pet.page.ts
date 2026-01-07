@@ -25,7 +25,7 @@ export class HomePetPage {
     const cuidador = JSON.parse(localStorage.getItem('cuidador') || '{}');
     if (!cuidador?.id) return;
 
-    this.http.get<any[]>(`http://localhost:5000/api/mascotas/cuidador/${cuidador.id}`)
+    this.http.get<any[]>(`https://backend-mascotas-dui0.onrender.com/api/mascotas/cuidador/${cuidador.id}`)
       .subscribe(data => this.mascotas = data);
   }
 

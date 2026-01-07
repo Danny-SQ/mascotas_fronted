@@ -27,7 +27,7 @@ export class RegisterPage {
 
   async registrar() {
     try {
-      await this.http.post<any>('http://localhost:5000/api/cuidadores', this.cuidador).toPromise();
+      await this.http.post<any>('https://backend-mascotas-dui0.onrender.com/api/cuidadores', this.cuidador).toPromise();
       const alert = await this.alertCtrl.create({
         header: 'Éxito',
         message: 'Registro completado',

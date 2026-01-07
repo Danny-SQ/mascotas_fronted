@@ -37,7 +37,7 @@ export class EditPetPage implements OnInit {
 
     if (this.mascotaId) {
       try {
-        const res = await this.http.get<any>(`http://localhost:5000/api/mascotas/${this.mascotaId}`).toPromise();
+        const res = await this.http.get<any>(`https://backend-mascotas-dui0.onrender.com/api/mascotas/${this.mascotaId}`).toPromise();
         this.mascota = { ...res };
       } catch {
         const alert = await this.alertCtrl.create({
@@ -53,7 +53,7 @@ export class EditPetPage implements OnInit {
 
   async actualizarMascota() {
     try {
-      await this.http.put(`http://localhost:5000/api/mascotas/${this.mascotaId}`, this.mascota).toPromise();
+      await this.http.put(`https://backend-mascotas-dui0.onrender.com/api/mascotas/${this.mascotaId}`, this.mascota).toPromise();
 
       const alert = await this.alertCtrl.create({
         header: 'Éxito',

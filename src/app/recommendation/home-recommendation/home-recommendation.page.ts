@@ -24,7 +24,7 @@ export class HomeRecommendationPage {
     const cuidador = JSON.parse(localStorage.getItem('cuidador') || '{}');
     if (!cuidador?.id) return;
 
-    this.http.get<any[]>(`http://localhost:5000/api/recomendaciones/cuidador/${cuidador.id}`)
+    this.http.get<any[]>(`https://backend-mascotas-dui0.onrender.com/api/recomendaciones/cuidador/${cuidador.id}`)
       .subscribe(data => this.recomendaciones = data);
   }
 
@@ -54,7 +54,7 @@ export class HomeRecommendationPage {
       {
         text: 'Eliminar',
         handler: () => {
-          this.http.delete(`http://localhost:5000/api/recomendaciones/${id}`)
+          this.http.delete(`https://backend-mascotas-dui0.onrender.com/api/recomendaciones/${id}`)
             .subscribe(() => {
               this.navCtrl.navigateRoot('/home-recommendation');
             });

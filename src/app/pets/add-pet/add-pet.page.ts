@@ -50,7 +50,7 @@ export class AddPetPage {
     };
 
     try {
-      await this.http.post('http://localhost:5000/api/mascotas', mascota).toPromise();
+      await this.http.post('https://backend-mascotas-dui0.onrender.com/api/mascotas', mascota).toPromise();
       const alert = await this.alertCtrl.create({
         header: 'Éxito',
         message: 'Mascota registrada correctamente',

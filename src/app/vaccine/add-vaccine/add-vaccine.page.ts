@@ -38,7 +38,7 @@ export class AddVaccinePage {
   }
 
   cargarMascotas() {
-    this.http.get<any[]>(`http://localhost:5000/api/mascotas/cuidador/${this.cuidadorId}`)
+    this.http.get<any[]>(`https://backend-mascotas-dui0.onrender.com/api/mascotas/cuidador/${this.cuidadorId}`)
       .subscribe({
         next: data => this.mascotas = data,
         error: async () => {
@@ -88,7 +88,7 @@ export class AddVaccinePage {
       mascota_id: this.mascota_id
     };
 
-    this.http.post('http://localhost:5000/api/vacunas', data)
+    this.http.post('https://backend-mascotas-dui0.onrender.com/api/vacunas', data)
       .subscribe({
         next: () => this.navCtrl.navigateBack('/home-vaccine'),
         error: async () => {

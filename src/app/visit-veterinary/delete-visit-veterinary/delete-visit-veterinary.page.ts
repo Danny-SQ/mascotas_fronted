@@ -39,7 +39,7 @@ export class DeleteVisitVeterinaryPage {
         {
           text: 'Eliminar',
           handler: () => {
-            this.http.delete(`http://localhost:5000/api/visitas/${this.visitaId}`)
+            this.http.delete(`https://backend-mascotas-dui0.onrender.com/api/visitas/${this.visitaId}`)
               .subscribe({
                 next: () => this.navCtrl.navigateBack('/home-visit-veterinary'),
                 error: async () => {

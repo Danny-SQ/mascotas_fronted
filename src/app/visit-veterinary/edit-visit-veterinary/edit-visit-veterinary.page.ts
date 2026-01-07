@@ -48,7 +48,7 @@ export class EditVisitVeterinaryPage {
   }
 
   cargarMascotas() {
-    this.http.get<any[]>(`http://localhost:5000/api/mascotas/cuidador/${this.cuidadorId}`)
+    this.http.get<any[]>(`https://backend-mascotas-dui0.onrender.com/api/mascotas/cuidador/${this.cuidadorId}`)
       .subscribe({
         next: data => this.mascotas = data,
         error: async () => {
@@ -63,7 +63,7 @@ export class EditVisitVeterinaryPage {
   }
 
   cargarVisita() {
-    this.http.get<any>(`http://localhost:5000/api/visitas/${this.visitaId}`)
+    this.http.get<any>(`https://backend-mascotas-dui0.onrender.com/api/visitas/${this.visitaId}`)
       .subscribe({
         next: data => {
           this.fecha = data.fecha;
@@ -117,7 +117,7 @@ export class EditVisitVeterinaryPage {
       mascota_id: this.mascota_id
     };
 
-    this.http.put(`http://localhost:5000/api/visitas/${this.visitaId}`, data)
+    this.http.put(`https://backend-mascotas-dui0.onrender.com/api/visitas/${this.visitaId}`, data)
       .subscribe({
         next: () => this.navCtrl.navigateBack('/home-visit-veterinary'),
         error: async () => {

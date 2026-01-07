@@ -27,7 +27,7 @@ export class CaregiverEditPage {
 
   async guardarCambios() {
     try {
-      await this.http.put(`http://localhost:5000/api/cuidadores/${this.cuidador.id}`, this.cuidador).toPromise();
+      await this.http.put(`https://backend-mascotas-dui0.onrender.com/api/cuidadores/${this.cuidador.id}`, this.cuidador).toPromise();
       localStorage.setItem('cuidador', JSON.stringify(this.cuidador));
       const alert = await this.alertCtrl.create({
         header: 'Éxito',

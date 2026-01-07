@@ -50,7 +50,7 @@ export class EditReminderPage {
   }
 
   cargarMascotas() {
-    this.http.get<any[]>(`http://localhost:5000/api/mascotas/cuidador/${this.cuidadorId}`)
+    this.http.get<any[]>(`https://backend-mascotas-dui0.onrender.com/api/mascotas/cuidador/${this.cuidadorId}`)
       .subscribe({
         next: data => this.mascotas = data,
         error: async () => {
@@ -65,7 +65,7 @@ export class EditReminderPage {
   }
 
   cargarRecordatorio() {
-    this.http.get<any>(`http://localhost:5000/api/recordatorios/${this.reminderId}`)
+    this.http.get<any>(`https://backend-mascotas-dui0.onrender.com/api/recordatorios/${this.reminderId}`)
       .subscribe({
         next: data => {
           this.titulo = data.titulo;
@@ -132,7 +132,7 @@ export class EditReminderPage {
       mascota_id: this.mascota_id
     };
 
-    this.http.put(`http://localhost:5000/api/recordatorios/${this.reminderId}`, data)
+    this.http.put(`https://backend-mascotas-dui0.onrender.com/api/recordatorios/${this.reminderId}`, data)
       .subscribe({
         next: () => this.navCtrl.navigateBack('/home-reminder'),
         error: async () => {

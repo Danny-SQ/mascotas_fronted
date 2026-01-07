@@ -24,7 +24,7 @@ export class HomeDailyActivityPage {
     if (!cuidador?.id) return;
 
     // Obtener todas las actividades de las mascotas del cuidador
-    this.http.get<any[]>(`http://localhost:5000/api/actividades/cuidador/${cuidador.id}`)
+    this.http.get<any[]>(`https://backend-mascotas-dui0.onrender.com/api/actividades/cuidador/${cuidador.id}`)
       .subscribe(data => this.actividades = data);
   }
 
@@ -58,7 +58,7 @@ export class HomeDailyActivityPage {
       {
         text: 'Eliminar',
         handler: () => {
-          this.http.delete(`http://localhost:5000/api/actividades/${id}`)
+          this.http.delete(`https://backend-mascotas-dui0.onrender.com/api/actividades/${id}`)
             .subscribe(() => {
               // Redirigir al home de actividades después de eliminar
               this.navCtrl.navigateRoot('/home-daily-activity');

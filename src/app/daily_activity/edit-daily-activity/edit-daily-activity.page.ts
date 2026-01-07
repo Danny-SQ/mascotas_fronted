@@ -55,7 +55,7 @@ export class EditDailyActivityPage {
 
   cargarMascotas() {
     this.http
-      .get<any[]>(`http://localhost:5000/api/mascotas/cuidador/${this.cuidadorId}`)
+      .get<any[]>(`https://backend-mascotas-dui0.onrender.com/api/mascotas/cuidador/${this.cuidadorId}`)
       .subscribe({
         next: (data) => (this.mascotas = data),
         error: async () => {
@@ -71,7 +71,7 @@ export class EditDailyActivityPage {
 
   cargarActividad() {
     this.http
-      .get<any>(`http://localhost:5000/api/actividades/${this.actividadId}`)
+      .get<any>(`https://backend-mascotas-dui0.onrender.com/api/actividades/${this.actividadId}`)
       .subscribe({
         next: (data) => {
           this.fecha = data.fecha;
@@ -116,7 +116,7 @@ export class EditDailyActivityPage {
     };
 
     this.http
-      .put(`http://localhost:5000/api/actividades/${this.actividadId}`, data)
+      .put(`https://backend-mascotas-dui0.onrender.com/api/actividades/${this.actividadId}`, data)
       .subscribe({
         next: () => {
           this.navCtrl.navigateBack('/home-daily-activity');

@@ -24,7 +24,7 @@ export class HomeReminderPage {
     const cuidador = JSON.parse(localStorage.getItem('cuidador') || '{}');
     if (!cuidador?.id) return;
 
-    this.http.get<any[]>(`http://localhost:5000/api/recordatorios/cuidador/${cuidador.id}`)
+    this.http.get<any[]>(`https://backend-mascotas-dui0.onrender.com/api/recordatorios/cuidador/${cuidador.id}`)
       .subscribe(data => this.recordatorios = data);
   }
 
@@ -56,7 +56,7 @@ export class HomeReminderPage {
         {
           text: 'Eliminar',
           handler: () => {
-            this.http.delete(`http://localhost:5000/api/recordatorios/${id}`)
+            this.http.delete(`https://backend-mascotas-dui0.onrender.com/api/recordatorios/${id}`)
               .subscribe(() => this.ionViewWillEnter());
           }
         }

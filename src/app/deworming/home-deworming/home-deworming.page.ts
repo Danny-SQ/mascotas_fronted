@@ -24,7 +24,7 @@ export class HomeDewormingPage {
     const cuidador = JSON.parse(localStorage.getItem('cuidador') || '{}');
     if (!cuidador?.id) return;
 
-    this.http.get<any[]>(`http://localhost:5000/api/desparasitaciones/cuidador/${cuidador.id}`)
+    this.http.get<any[]>(`https://backend-mascotas-dui0.onrender.com/api/desparasitaciones/cuidador/${cuidador.id}`)
       .subscribe(data => this.desparasitaciones = data);
     
   }
@@ -55,7 +55,7 @@ export class HomeDewormingPage {
         {
           text: 'Eliminar',
           handler: () => {
-            this.http.delete(`http://localhost:5000/api/desparasitaciones/${id}`)
+            this.http.delete(`https://backend-mascotas-dui0.onrender.com/api/desparasitaciones/${id}`)
               .subscribe(() => {
                 this.navCtrl.navigateRoot('/home-deworming');
               });

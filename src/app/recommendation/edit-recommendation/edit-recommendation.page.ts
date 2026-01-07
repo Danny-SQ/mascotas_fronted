@@ -48,7 +48,7 @@ export class EditRecommendationPage {
   }
 
   cargarMascotas() {
-    this.http.get<any[]>(`http://localhost:5000/api/mascotas/cuidador/${this.cuidadorId}`)
+    this.http.get<any[]>(`https://backend-mascotas-dui0.onrender.com/api/mascotas/cuidador/${this.cuidadorId}`)
       .subscribe({
         next: data => this.mascotas = data,
         error: async () => {
@@ -63,7 +63,7 @@ export class EditRecommendationPage {
   }
 
   cargarRecomendacion() {
-    this.http.get<any>(`http://localhost:5000/api/recomendaciones/${this.recommendationId}`)
+    this.http.get<any>(`https://backend-mascotas-dui0.onrender.com/api/recomendaciones/${this.recommendationId}`)
       .subscribe({
         next: data => {
           this.tipo = data.tipo;
@@ -117,7 +117,7 @@ export class EditRecommendationPage {
       mascota_id: this.mascota_id
     };
 
-    this.http.put(`http://localhost:5000/api/recomendaciones/${this.recommendationId}`, data)
+    this.http.put(`https://backend-mascotas-dui0.onrender.com/api/recomendaciones/${this.recommendationId}`, data)
       .subscribe({
         next: () => this.navCtrl.navigateBack('/home-recommendation'),
         error: async () => {

@@ -39,7 +39,7 @@ export class DeleteReminderPage {
         {
           text: 'Eliminar',
           handler: () => {
-            this.http.delete(`http://localhost:5000/api/recordatorios/${this.reminderId}`)
+            this.http.delete(`https://backend-mascotas-dui0.onrender.com/api/recordatorios/${this.reminderId}`)
               .subscribe({
                 next: () => this.navCtrl.navigateBack('/home-reminder'),
                 error: async () => {

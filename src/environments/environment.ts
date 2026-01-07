@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  SERVER_URL: 'https://backend-mascotas-dui0.onrender.com/',
-  CLIENT_URL: 'https://mascotas-fronted.netlify.app/'
+  SERVER_URL: 'https://backend-mascotas-dui0.onrender.com',
+  CLIENT_URL: 'https://mascotas-fronted.netlify.app'
 };
 
 /*

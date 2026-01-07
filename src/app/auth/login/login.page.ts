@@ -4,6 +4,7 @@ import { IonicModule, AlertController, NavController } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router'; // <-- Importa RouterModule
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +26,7 @@ export class LoginPage {
   async login() {
     try {
       const cuidador = await this.http.post<any>(
-        'http://localhost:5000/api/login',
+        environment.SERVER_URL+'/api/login',
         {
           correo: this.correo.trim(),
           contrasena: this.contrasena.trim()

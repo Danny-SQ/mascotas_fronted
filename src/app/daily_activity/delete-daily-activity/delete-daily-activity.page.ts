@@ -24,7 +24,7 @@ export class DeleteDailyActivityPage {
 
   async eliminar() {
     try {
-      await this.http.delete(`http://localhost:5000/api/actividades/${this.id}`).toPromise();
+      await this.http.delete(`https://backend-mascotas-dui0.onrender.com/api/actividades/${this.id}`).toPromise();
       const alert = await this.alertCtrl.create({
         header: 'Éxito',
         message: 'Actividad eliminada',

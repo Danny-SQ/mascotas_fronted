@@ -24,7 +24,7 @@ export class HomeVaccinePage {
     const cuidador = JSON.parse(localStorage.getItem('cuidador') || '{}');
     if (!cuidador?.id) return;
 
-    this.http.get<any[]>(`http://localhost:5000/api/vacunas/cuidador/${cuidador.id}`)
+    this.http.get<any[]>(`https://backend-mascotas-dui0.onrender.com/api/vacunas/cuidador/${cuidador.id}`)
       .subscribe(data => this.vacunas = data);
   }
 
@@ -56,7 +56,7 @@ export class HomeVaccinePage {
       {
         text: 'Eliminar',
         handler: () => {
-          this.http.delete(`http://localhost:5000/api/vacunas/${id}`)
+          this.http.delete(`https://backend-mascotas-dui0.onrender.com/api/vacunas/${id}`)
             .subscribe(() => {
               this.navCtrl.navigateRoot('/home-vaccine');
             });
